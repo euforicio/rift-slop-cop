@@ -4,7 +4,7 @@
 // draft -> ready-for-review edge, matches PRs against enabled rules, and spawns
 // a review thread per match. When that thread goes idle, SlopCop verifies the
 // outcome against GitHub itself rather than trusting the agent's transcript.
-import { defineRpcContract, type BbPluginApi } from "@get-bb/plugin-sdk";
+import { defineRpcContract, type RiftPluginApi } from "@riftlabs/plugin-sdk";
 import { z } from "zod";
 import { createGhClient, type GhClient } from "./lib/gh";
 import {
@@ -203,7 +203,7 @@ function toRuleOutput(rule: Rule) {
   return { ...rule, dangerous: isDangerousCombination(rule) };
 }
 
-export default async function plugin(bb: BbPluginApi) {
+export default async function plugin(bb: RiftPluginApi) {
   const settings = bb.settings.define({
     pollSeconds: {
       type: "string",

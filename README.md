@@ -18,7 +18,7 @@ Requires BB ≥ 0.35 and an authenticated [`gh`](https://cli.github.com) on the 
 running the BB server.
 
 ```sh
-bb plugin install git:https://github.com/SawyerHood/bb-slop-cop.git@main
+rift plugin install git:https://github.com/SawyerHood/bb-slop-cop.git@main
 ```
 
 ## Quick start
@@ -59,7 +59,7 @@ The default trust gate handles only issues from repository members and collabora
 To put all new review threads in one BB section, set its name or ID:
 
 ```sh
-bb plugin config slopcop set defaultThreadSection "Automated reviews"
+rift plugin config slopcop set defaultThreadSection "Automated reviews"
 ```
 
 Clear the setting to create review threads without a section.
@@ -254,8 +254,8 @@ without posting) · `skipped` (matched nothing, e.g. blocked by the trust gate) 
 npm install
 npx vitest run     # matcher, markers, triggers, verification
 npx tsc --noEmit
-bb plugin install .
-bb plugin dev      # rebuild + reload on save
+rift plugin install .
+rift plugin dev      # rebuild + reload on save
 ```
 
 The interesting logic is pure and unit-tested: `lib/matcher.ts` (globs, trust gate,
@@ -273,3 +273,7 @@ Two things worth knowing before changing storage or GitHub reads:
 ## License
 
 MIT
+
+## Rift fork
+
+Maintained for Rift. Original source and credit: [SawyerHood/bb-slop-cop](https://github.com/SawyerHood/bb-slop-cop). Original licensing and attribution are preserved. Use `npm ci` and `npm run build`; the pinned SDK artifact is documented in [vendor/README.md](vendor/README.md).

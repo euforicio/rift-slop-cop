@@ -61,7 +61,7 @@ you tune it.
 Set a default BB section for all new review threads with a section name or ID:
 
 ```sh
-bb plugin config slopcop set defaultThreadSection "Automated reviews"
+rift plugin config slopcop set defaultThreadSection "Automated reviews"
 ```
 
 Clear `defaultThreadSection` to create review threads without a section. A run

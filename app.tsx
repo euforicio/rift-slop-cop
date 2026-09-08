@@ -13,10 +13,10 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   definePluginApp,
   experimental_NewThreadComposer as NewThreadComposer,
-  useBbNavigate,
+  useRiftNavigate,
   useRealtime,
   useRpc,
-} from "@get-bb/plugin-sdk/app";
+} from "@riftlabs/plugin-sdk/app";
 import { toast } from "sonner";
 import type { rpcContract } from "./server";
 import { Button } from "@/components/ui/button";
@@ -793,7 +793,7 @@ function RuleEditor({
 // --------------------------------------------------------------------------
 
 function Activity({ runs }: { runs: RunView[] }) {
-  const navigate = useBbNavigate();
+  const navigate = useRiftNavigate();
   const rpc = useRpc<typeof rpcContract>();
   const [expanded, setExpanded] = useState<string | null>(null);
   const [comments, setComments] = useState<Record<string, CommentView[]>>({});
